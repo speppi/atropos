@@ -18,10 +18,9 @@ public class NovelModel : MonoBehaviour
 
     }
 
-    public string GetNextDialogue()
+    public string GetNextDialogueString()
     {
-        string currDialogueString = dialogueStrings[currDialogue];
         currDialogue = (currDialogue + 1) % dialogueStrings.Length;
-        return currDialogueString;
+        return dialogueStrings[currDialogue];
     }
 }

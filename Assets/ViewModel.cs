@@ -53,7 +53,7 @@ public class ViewModel : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            BoxText = MyNovelModel.GetNextDialogue();
+            BoxText = MyNovelModel.GetNextDialogueString();
         }
     }
 }
