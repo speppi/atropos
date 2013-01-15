@@ -1,0 +1,37 @@
+<script> ::= <statements>
+
+<statements> ::= <statement> <statements> | <statement>
+
+<statement> ::= <comment> | <image alias> | <character alias> | <label> | <menu block> | <show character> | <hide character> | <jump> | <return> | <dialogue line>
+
+<comment> ::= #<comment string>
+
+<image alias> ::= image <image name> = "<file name>"
+
+<image name> ::= <name identifier> <tag identifier>
+
+<character alias> ::= character <alias identifier> = "<name identifier>"
+
+<label> ::= label <label identifier>:
+
+<menu block> ::= <menu header> <menu options>
+
+<menu header> ::= menu:
+
+<menu options> ::= <menu options> <menu option> | <menu option>
+
+<menu option> ::= <menu text> <jump>
+
+<menu text> ::= "<menu text literal>":
+
+<jump> ::= jump <label identifier>
+
+<show character> ::= show <image name>
+
+<hide> ::= hide
+
+<return> ::= return
+
+<dialogue line> ::= <character> "<dialogue literal>"
+
+<character> ::= "<character name literal>" | <character alias identifier>
