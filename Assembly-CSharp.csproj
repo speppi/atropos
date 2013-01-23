@@ -48,6 +48,9 @@
      <Compile Include="Assets\NovelModel.cs" />
      <Compile Include="Assets\NovelNodes.cs" />
      <Compile Include="Assets\ViewModel.cs" />
+ <Reference Include="Newtonsoft.Json">
+ <HintPath>Assets\Newtonsoft.Json.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

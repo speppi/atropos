@@ -1,11 +1,10 @@
+using Newtonsoft.Json;
+using System.IO;
+using System.Net;
 using UnityEngine;
-using System.Collections;
 
 public class NovelModel : MonoBehaviour
 {
-    int currDialogue = 0;
-    string[] dialogueStrings = { "I'm a little teapot, short and stout.", "Here is my handle. Here is my spout.", "When I get all steamed up I will shout:", "Just tip me over and pour me out!" };
-
     // Use this for initialization
     void Start()
     {
@@ -18,9 +17,23 @@ public class NovelModel : MonoBehaviour
 
     }
 
-    public string GetNextDialogueString()
+    public NovelNode GetNextNovelNode(int choice = -1)
     {
-        currDialogue = (currDialogue + 1) % dialogueStrings.Length;
-        return dialogueStrings[currDialogue];
+        var url = "http://speppiland.com/atropos/getNextNovelNode.py";
+        if (choice != -1)
+        {
+            url = string.Format("{0}?choice={1}", url, choice);
+        }
+        var webRequest = HttpWebRequest.Create(url);
+        string dialogueString = "";
+        using (var webResponse = webRequest.GetResponse())
+        {
+            using (var webReader = new StreamReader(webResponse.GetResponseStream()))
+            {
+                dialogueString = webReader.ReadToEnd();
+            }
+        }
+        var resultNode = JsonConvert.DeserializeObject<NovelNode>(dialogueString, new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Objects });
+        return resultNode;
     }
 }
