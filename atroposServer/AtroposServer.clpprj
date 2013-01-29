@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="C:\Users\sparou\Desktop\Games\atroposServer\AtroposServer.clpprj">
+	<settings><PM_URL><![CDATA[C:/Users/sparou/Desktop/shakesturbate/]]></PM_URL><PM_HOME_URL><![CDATA[C:/Users/sparou/Desktop/shakesturbate/]]></PM_HOME_URL><PM_LIBS><![CDATA[]]></PM_LIBS><PM_FTP_CONNECTION><![CDATA[]]></PM_FTP_CONNECTION><PM_FTP_DIR><![CDATA[]]></PM_FTP_DIR><PM_FTP_UPLOAD_ON_SAVE><![CDATA[INT:0]]></PM_FTP_UPLOAD_ON_SAVE></settings><removed value=";"/><added value=""/><codestructure>
+		<phptree>
+			<treenode node="_GET;PHP:Var Name;C:\Users\sparou\Desktop\Games\atroposServer\getNextNovelNode.php;f11;6;16;6;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+			</treenode>
+			<treenode node="node;PHP:Var Name;C:\Users\sparou\Desktop\Games\atroposServer\getNextNovelNode.php;f2;3;7;3;;;;vpos;;v;;r;;d-1,-1;;b0,0;;m">
+			</treenode>
+		</phptree>
+		<jstree>
+		</jstree>
+		<file name="C:\Users\sparou\Desktop\Games\atroposServer\AtroposServer.clpprj" crc="2035216842"/>
+		<file name="C:\Users\sparou\Desktop\Games\atroposServer\pygold\README.txt" crc="1764514198"/>
+		<file name="C:\Users\sparou\Desktop\Games\atroposServer\pygold\LICENSE.txt" crc="705038056"/>
+		<file name="C:\Users\sparou\Desktop\Games\atroposServer\krajewski-python-source-v0.9.1\pygold-0.9.1-sources\pygold\README.txt" crc="1764514198"/>
+		<file name="C:\Users\sparou\Desktop\Games\atroposServer\krajewski-python-source-v0.9.1\pygold-0.9.1-sources\pygold\LICENSE.txt" crc="705038056"/>
+		<file name="C:\Users\sparou\Desktop\Games\atroposServer\krajewski-python-source-v0.9.1\pygold-0.9-demo\demo\test.input.txt" crc="1028179696"/>
+		<file name="C:\Users\sparou\Desktop\Games\atroposServer\getNextNovelNode.php" crc="1974510977"/>
+	</codestructure><dbgurls>
+	</dbgurls>
+</project>
