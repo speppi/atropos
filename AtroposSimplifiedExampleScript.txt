@@ -20,21 +20,13 @@ c "...Though I guess we should make sure everyone agrees..."
 show charlie normal
 c "Alpha, what do you think we should do?"
 
-label askAlpha:
-Player1:
 	menu:
 		"We should attack immediately!":
 			jump attack
 		"Let's wait.":
 			jump wait
-		"I don't know..."
+		"I don't know...":
 			jump unsure
-EndPlayer1
-Player2:
-	show alpha normal
-	"Alpha seems to be thinking hard..."
-EndPlayer2
-
 label attack:
 	show alpha happy
 	a "I think we should attack now and maintain the element of surprise!"
@@ -54,41 +46,14 @@ label response:
 	show charlie normal
 	c "Huh. OK. What do you think, Bravo?"
 
-label askBravo:
-Player1:
 	show bravo normal
 	"I bet she has a better idea..."
-Player2:
-	menu:
-		"Attack now!":
-			jump attack
-		"Not just yet.":
-			jump wait
-		"Not sure...":
-			jump unsure
 
-label attack:
 	show bravo happy
 	b "I like attacking now."
 	jump response2
-label wait:
-	show bravo normal
-	b "Only fools rush in, they say."
-	jump response2
-label unsure:
-	show bravo sad
-	b "..."
-	show charlie normal
-	c "C'mon, have some idea!"
-	jump askBravo
 
 label response2:
 	show charlie sad
 	"He seems to have expected better."
-	c "OK, I'll just decide what to do...
-
-Player 1:
-	"something"
-Player2 2:
-	"something else"
-"next thing"
+	c "OK, I'll just decide what to do..."
