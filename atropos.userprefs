@@ -1,8 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Hax.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Orthello\Examples\0 - Simple Examples\DragTest\DragTest.cs">
     <Files>
-      <File FileName="Assets\Hax.cs" Line="9" Column="41" />
+      <File FileName="Assets\Orthello\Standard Assets\OT\Graphics\OTView.cs" Line="404" Column="1" />
+      <File FileName="Assets\Orthello\Examples\0 - Simple Examples\Persistance\-read-me.txt" Line="1" Column="1" />
+      <File FileName="Assets\AtroposRoom\AtroposCStar2.cs" Line="16" Column="23" />
+      <File FileName="c:\Users\sparou\Desktop\Games\atropos\Assets\NovelModel.cs" Line="20" Column="50" />
+      <File FileName="Assets\AtroposRoom\AtroposCExample2.cs" Line="106" Column="26" />
+      <File FileName="Assets\Orthello\Examples\2 - Moving collidable sprites\CStar2.cs" Line="16" Column="41" />
+      <File FileName="Assets\Orthello\Examples\0 - Simple Examples\DragTest\DragTest.cs" Line="33" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
