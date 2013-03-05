@@ -147,6 +147,8 @@
      <Compile Include="Assets\Orthello\Standard Assets\OT\_Base\OTPB.cs" />
      <Compile Include="Assets\Orthello\Standard Assets\OT\_Base\OTSounds.cs" />
      <Compile Include="Assets\Orthello\Standard Assets\OT\_Base\OTTimeCycle.cs" />
+     <Compile Include="Assets\Room Scripting\CursorBehavior.cs" />
+     <Compile Include="Assets\Room Scripting\HitBoxBehavior.cs" />
      <Compile Include="Assets\ViewModel.cs" />
      <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\lorem.txt" />
      <None Include="Assets\Orthello\Examples\0 - Simple Examples\TextSprites\Atlases\russian.txt" />
