@@ -27,7 +27,7 @@ Player1:
 			jump attack
 		"Let's wait.":
 			jump wait
-		"I don't know..."
+		"I don't know...":
 			jump unsure
 EndPlayer1
 Player2:
@@ -58,6 +58,7 @@ label askBravo:
 Player1:
 	show bravo normal
 	"I bet she has a better idea..."
+EndPlayer1
 Player2:
 	menu:
 		"Attack now!":
@@ -66,6 +67,7 @@ Player2:
 			jump wait
 		"Not sure...":
 			jump unsure
+EndPlayer2
 
 label attack:
 	show bravo happy
@@ -85,10 +87,4 @@ label unsure:
 label response2:
 	show charlie sad
 	"He seems to have expected better."
-	c "OK, I'll just decide what to do...
-
-Player 1:
-	"something"
-Player2 2:
-	"something else"
-"next thing"
+	c "OK, I'll just decide what to do..."

@@ -21,9 +21,9 @@ Identifier = {AlphaNumeric}+
 
 <nl> ::= NewLine <nl> | NewLine
 
-<nl Opt> ::= NewLine <nl Opt> | <>
+<nlOpt> ::= NewLine <nlOpt> | <>
 
-<statements> ::= <nl Opt> <statement> <nl Opt> <statements> | <>
+<statements> ::= <statement> <nlOpt> <statements> | <>
 
 <statement> ::= <image alias> | <character alias> | <label> | <menu block> | <show character> | <hide> | <jump> | <return> | <dialogue line>
 
@@ -35,13 +35,13 @@ Identifier = {AlphaNumeric}+
 
 <label> ::= label Identifier':'
 
-<menu block> ::= <menu header> <menu options>
+<menu block> ::= <menu header> <menu options> 
 
-<menu header> ::= menu':'
+<menu header> ::= menu':' NewLine
 
-<menu options> ::= <menu options> <menu option> | <menu option>
+<menu options> ::= <menu options> <nl> <menu option> | <menu option> <nl>
 
-<menu option> ::= String ':' <jump>
+<menu option> ::= String ':' NewLine <jump>
 
 <jump> ::= jump Identifier
 
