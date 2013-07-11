@@ -1,0 +1,106 @@
+character a = "Alpha"
+character b = "Bravo"
+character c = "Charlie"
+image bg meadow = "bgMeadow.png"
+image bg forest = "bgForest.png"
+image alpha happy = "AlphaHappy.png"
+image alpha sad = "AlphaSad.png"
+image alpha normal = "AlphaNormal.png"
+image bravo happy = "BravoHappy.png"
+image bravo sad = "BravoSad.png"
+image bravo normal = "BravoNormal.png"
+image charlie happy = "CharlieHappy.png"
+image charlie sad = "CharlieSad.png"
+image charlie normal = "CharlieNormal.png"
+
+scene bg meadow
+"Narrator" "They were all gathered to decide what to do."
+show charlie happy
+"Charlie forced his way into being the leader."
+c "OK, so it's really important that we go in with a plan..."
+show charlie sad
+c "...Though I guess we should make sure everyone agrees..."
+show charlie normal
+c "Alpha, what do you think we should do?"
+
+label askAlpha:
+start Player1:
+	start menu:
+		"We should attack immediately!":
+			jump attack
+		"Let's wait.":
+			jump wait
+		"I don't know...":
+			jump unsure
+    end menu
+End Player1
+start Player2:
+	show alpha normal
+	"Alpha seems to be thinking hard..."
+end player2
+
+label attack:
+	show alpha happy
+	a "I think we should attack now and maintain the element of surprise!"
+	jump response
+label wait:
+	show alpha normal
+	a "We should wait until it's dark..."
+	jump response
+label unsure:
+	show alpha sad
+	a "Uhh... I guess... Uhh..."
+	show charlie normal
+	c "Oh jeez!"
+	jump askAlpha
+
+label response:
+	show charlie normal
+	c "Huh. OK. We're nearly there."
+    scene bg forest
+    c "What do you think, Bravo?"
+
+label askBravo:
+start player1:
+	show bravo normal
+	"I bet she has a better idea..."
+end player1
+start player2:
+	start menu:
+		"Attack now!":
+			jump attack2
+		"Not just yet.":
+			jump wait2
+		"Not sure...":
+			jump unsure2
+    end menu
+end player2
+
+label attack2:
+	show bravo happy
+	b "I like attacking now."
+	jump response2
+label wait2:
+	show bravo normal
+	b "Only fools rush in, they say."
+	jump response2
+label unsure2:
+	show bravo sad
+	b "..."
+	show charlie normal
+	c "C'mon, have some idea!"
+	jump askBravo
+
+label response2:
+	show charlie sad
+	"He seems to have expected better."
+	c "OK, I'll just decide what to do..."
+
+start player1:
+    a "(Geez! Why did he even bother asking?)"
+end player1
+start player2:
+    b "(Oh, well...)"
+end player2
+
+"Narrator" "Not the most auspicious of starts..."

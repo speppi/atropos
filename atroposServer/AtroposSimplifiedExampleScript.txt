@@ -1,0 +1,73 @@
+character a = "Alpha"
+character b = "Bravo"
+character c = "Charlie"
+image bg meadow = "bgMeadow.png"
+image bg forest = "bgForest.png"
+image alpha happy = "AlphaHappy.png"
+image alpha sad = "AlphaSad.png"
+image alpha normal = "AlphaNormal.png"
+image bravo happy = "BravoHappy.png"
+image bravo sad = "BravoSad.png"
+image bravo normal = "BravoNormal.png"
+image charlie happy = "CharlieHappy.png"
+image charlie sad = "CharlieSad.png"
+image charlie normal = "CharlieNormal.png"
+
+scene bg meadow
+"Narrator" "They were all gathered to decide what to do."
+show charlie happy
+"Charlie forced his way into being the leader."
+c "OK, so it's really important that we go in with a plan..."
+show charlie sad
+c "...Though I guess we should make sure everyone agrees..."
+show charlie normal
+c "Alpha, what do you think we should do?"
+
+label askAlpha:
+	show alpha normal
+	"Alpha seems to be thinking hard..."
+    jump unsure
+
+label attack:
+	show alpha happy
+	a "I think we should attack now and maintain the element of surprise!"
+	jump response
+label wait:
+	show alpha normal
+	a "We should wait until it's dark..."
+	jump response
+label unsure:
+	show alpha sad
+	a "Uhh... I guess... Uhh..."
+	show charlie normal
+	c "Oh jeez!"
+
+label response:
+	show charlie normal
+	c "Huh. OK. We're nearly there."
+    scene bg forest
+    c "What do you think, Bravo?"
+
+label askBravo:
+	show bravo normal
+	"I bet she has a better idea..."
+
+label attack2:
+	show bravo happy
+	b "I like attacking now."
+	jump response2
+label wait2:
+	show bravo normal
+	b "Only fools rush in, they say."
+	jump response2
+label unsure2:
+	show bravo sad
+	b "..."
+	show charlie normal
+	c "C'mon, have some idea!"
+	jump askBravo
+
+label response2:
+	show charlie sad
+	"He seems to have expected better."
+	c "OK, I'll just decide what to do..."
