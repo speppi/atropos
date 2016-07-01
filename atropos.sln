@@ -3,6 +3,10 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 
 Project("{04F0A23A-FDCE-5288-24AC-84BB41E83348}") = "atropos", "Assembly-CSharp.csproj", "{9465B9EB-CDC7-72C2-F983-7376A5B078F2}"
 EndProject
+Project("{04F0A23A-FDCE-5288-24AC-84BB41E83348}") = "atropos", "Assembly-CSharp-Editor.csproj", "{F586F9E2-7A7C-F56A-A5EC-2E548FD9A29C}"
+EndProject
+Project("{04F0A23A-FDCE-5288-24AC-84BB41E83348}") = "atropos", "Assembly-UnityScript.unityproj", "{C8F89ABB-D5B2-7213-BE0E-031D1B344FCE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -13,11 +17,19 @@ Global
 		{9465B9EB-CDC7-72C2-F983-7376A5B078F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9465B9EB-CDC7-72C2-F983-7376A5B078F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9465B9EB-CDC7-72C2-F983-7376A5B078F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F586F9E2-7A7C-F56A-A5EC-2E548FD9A29C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F586F9E2-7A7C-F56A-A5EC-2E548FD9A29C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F586F9E2-7A7C-F56A-A5EC-2E548FD9A29C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F586F9E2-7A7C-F56A-A5EC-2E548FD9A29C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8F89ABB-D5B2-7213-BE0E-031D1B344FCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8F89ABB-D5B2-7213-BE0E-031D1B344FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8F89ABB-D5B2-7213-BE0E-031D1B344FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8F89ABB-D5B2-7213-BE0E-031D1B344FCE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-																																										GlobalSection(MonoDevelopProperties) = preSolution
+																																																							GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1

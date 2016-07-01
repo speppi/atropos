@@ -6,14 +6,13 @@ public class ViewModel : MonoBehaviour
     public Texture characterTexture;
     public GUISkin guiSkinDefault;
     NovelModel MyNovelModel;
-    NovelNode currentNovelNode;
+    NovelNode currentNovelNode = null;
     int lastSelection = -1;
 
     // Use this for initialization
     void Start()
     {
         MyNovelModel = GetComponent<NovelModel>();
-        currentNovelNode = MyNovelModel.GetNextNovelNode();
     }
 
     void OnGUI()
@@ -28,44 +27,64 @@ public class ViewModel : MonoBehaviour
             GUI.DrawTexture(new Rect(0, 0, 286, 600), characterTexture, ScaleMode.ScaleToFit);
         }
 
-        if (currentNovelNode is MenuNode)
+        if (currentNovelNode.nodeType == NodeType.MenuNode)
         {
-            var menuNode = currentNovelNode as MenuNode;
             var menuItemsStyle = new GUIStyle(guiSkinDefault.button);
             menuItemsStyle.fontSize = 28;
             menuItemsStyle.fixedHeight = 50;
             var menuItemWidth = 400;
             var menuItemHeight = 500;
-            lastSelection = GUI.SelectionGrid(new Rect(Screen.width / 2 - menuItemWidth / 2, Screen.height / 2 - menuItemHeight / 3, menuItemWidth, menuItemHeight), lastSelection, menuNode.choices, 1, menuItemsStyle);
+            lastSelection = GUI.SelectionGrid(new Rect(Screen.width / 2 - menuItemWidth / 2, Screen.height / 2 - menuItemHeight / 3, menuItemWidth, menuItemHeight), lastSelection, currentNovelNode.menuOptions, 1, menuItemsStyle);
         }
-        else if (currentNovelNode is DialogueNode)
+        else if (currentNovelNode.nodeType == NodeType.Dialogue)
         {
-            var dialogueNode = currentNovelNode as DialogueNode;
             var dialogueBoxStyle = new GUIStyle(guiSkinDefault.box);
             dialogueBoxStyle.alignment = TextAnchor.UpperLeft;
             dialogueBoxStyle.wordWrap = true;
             dialogueBoxStyle.fontSize = 36;
             dialogueBoxStyle.padding = new RectOffset(10, 10, 10, 10);
-            GUI.Box(new Rect(10, Screen.height - 195, Screen.width - 20, 185), dialogueNode.dialogue, dialogueBoxStyle);
+            GUI.Box(new Rect(10, Screen.height - 195, Screen.width - 20, 185), currentNovelNode.dialogue, dialogueBoxStyle);
 
-            var characterNameStyle = new GUIStyle(guiSkinDefault.box);
-            characterNameStyle.alignment = TextAnchor.MiddleLeft;
-            characterNameStyle.fontSize = 28;
-            characterNameStyle.padding = new RectOffset(10, 10, 10, 10);
-            GUI.Box(new Rect(10, Screen.height - 245, 300, 50), "Atropos", characterNameStyle);
+            if (!string.IsNullOrEmpty(currentNovelNode.characterName))
+            {
+                var characterNameStyle = new GUIStyle(guiSkinDefault.box);
+                characterNameStyle.alignment = TextAnchor.MiddleLeft;
+                characterNameStyle.fontSize = 28;
+                characterNameStyle.padding = new RectOffset(10, 10, 10, 10);
+                GUI.Box(new Rect(10, Screen.height - 245, 300, 50), currentNovelNode.characterName, characterNameStyle);
+            }
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentNovelNode is MenuNode && lastSelection != -1)
+
+        if (currentNovelNode == null)
         {
+            Debug.Log("Getting for null novel node");
+            currentNovelNode = MyNovelModel.GetNextNovelNode();
+        }
+        else if (lastSelection != -1)
+        {
+            Debug.Log("Choice made!");
             currentNovelNode = MyNovelModel.GetNextNovelNode(lastSelection);
             lastSelection = -1;
         }
-        else if (currentNovelNode is DialogueNode && Input.GetButtonDown("Fire1"))
+        else if (currentNovelNode.nodeType == NodeType.Dialogue && Input.GetButtonDown("Fire1"))
         {
+            Debug.Log("Getting next dialogue node");
+            currentNovelNode = MyNovelModel.GetNextNovelNode();
+        }
+        else if (currentNovelNode.nodeType == NodeType.Undefined && Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log("Waiting for other player");
+            currentNovelNode = MyNovelModel.GetNextNovelNode();
+        }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            MyNovelModel.SwitchPlayers();
             currentNovelNode = MyNovelModel.GetNextNovelNode();
         }
     }
